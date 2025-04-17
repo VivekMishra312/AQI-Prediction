@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import torch
 import numpy as np
 import pandas as pd
@@ -9,6 +10,7 @@ import os
 
 
 app = Flask(__name__)
+CORS(app)
 
 # Load scalers
 scaler_X = joblib.load("scaler_X.pkl")
